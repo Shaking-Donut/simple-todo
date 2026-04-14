@@ -26,6 +26,9 @@ importers:
       react-dom:
         specifier: ^19.2.4
         version: 19.2.5(react@19.2.5)
+      react-swipeable-list:
+        specifier: ^1.10.0
+        version: 1.10.0
       zustand:
         specifier: ^5.0.12
         version: 5.0.12(@types/react@19.2.14)(react@19.2.5)
@@ -1084,6 +1087,9 @@ packages:
 
   react-is@19.2.5:
     resolution: {integrity: sha512-Dn0t8IQhCmeIT3wu+Apm1/YVsJXsGWi6k4sPdnBIdqMVtHtv0IGi6dcpNpNkNac0zB2uUAqNX3MHzN8c+z2rwQ==}
+
+  react-swipeable-list@1.10.0:
+    resolution: {integrity: sha512-Ap85a3c5sgvglZBlaansfT6VfwuMad5U4puxFW4sJbUU6alE7epzW39CHvs5AohUZi7wjlP1KFunpXoD+iUyGQ==}
 
   react-transition-group@4.4.5:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
@@ -2291,6 +2297,8 @@ snapshots:
   react-is@16.13.1: {}
 
   react-is@19.2.5: {}
+
+  react-swipeable-list@1.10.0: {}
 
   react-transition-group@4.4.5(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
     dependencies:
