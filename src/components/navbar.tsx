@@ -8,32 +8,12 @@ import {
     Box,
     List,
     ThemeProvider,
-    createTheme,
 } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import { ThemeToggle } from './themeToggle'
 import { VersionToggle } from './versionToggle'
 import { BrowserView, MobileView } from 'react-device-detect'
-
-const theme = createTheme({
-    components: {
-        MuiSelect: {
-            defaultProps: {
-                variant: 'standard',
-                disableUnderline: true,
-                color: 'secondary',
-            },
-            styleOverrides: {
-                select: {
-                    color: 'white',
-                },
-                icon: {
-                    color: 'white',
-                },
-            },
-        },
-    },
-})
+import { appBarSelectCustomTheme } from '@/theme'
 
 export function Navbar() {
     const [drawerOpen, setDrawerOpen] = useState(false)
@@ -62,7 +42,7 @@ export function Navbar() {
                         Simple Todo
                     </Typography>
                     <BrowserView>
-                        <ThemeProvider theme={theme}>
+                        <ThemeProvider theme={appBarSelectCustomTheme}>
                             <List
                                 sx={{
                                     display: 'flex',
