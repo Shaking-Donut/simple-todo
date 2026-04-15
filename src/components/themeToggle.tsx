@@ -8,7 +8,12 @@ export function ThemeToggle() {
 
     return (
         <Box sx={{ width: '100%' }}>
-            <Select value={mode} label="Theme" onChange={(e) => setMode(e.target.value)} fullWidth>
+            <Select
+                value={mode ?? 'system'}
+                onChange={(e) => setMode(e.target.value)}
+                fullWidth
+                renderValue={(value) => `Theme: ${capitalizeFirstLetter(value)}`}
+            >
                 {ColorSchemes.map((scheme) => (
                     <MenuItem key={scheme} value={scheme}>
                         {capitalizeFirstLetter(scheme)}

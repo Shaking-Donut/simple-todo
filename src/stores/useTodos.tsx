@@ -1,11 +1,12 @@
 import type { Todo } from '@/types/todos'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
+import { generateRandomUUID } from '@/utils/randomUUID'
 
 type TodoStore = {
     todos: Todo[]
     addTodo: (text: string) => void
-    completeTodo: (id: string) => void
+    toggleTodo: (id: string) => void
     removeTodo: (id: string) => void
 }
 
@@ -16,18 +17,20 @@ export const useTodos = create<TodoStore>()(
             addTodo: (text) =>
                 set((state) => {
                     const newTodo: Todo = {
-                        id: crypto.randomUUID(),
+                        id: generateRandomUUID(),
                         text,
                         dateCreated: new Date(),
                         completed: false,
                     }
                     return { todos: [...state.todos, newTodo] }
                 }),
-            completeTodo: (id) =>
+            toggleTodo: (id) =>
                 set((state) => {
                     return {
                         todos: state.todos.map((todo) =>
-                            todo.id === id ? { ...todo, completed: new Date() } : todo,
+                            todo.id === id
+                                ? { ...todo, completed: !!todo.completed ? false : new Date() }
+                                : todo,
                         ),
                     }
                 }),

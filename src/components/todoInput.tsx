@@ -8,7 +8,6 @@ export function TodoInput() {
     const addTodo = useTodos((state) => state.addTodo)
 
     const handleAddTodo = () => {
-        if (value.trim() === '') return
         addTodo(value)
         setValue('')
     }
@@ -20,8 +19,14 @@ export function TodoInput() {
                 variant="outlined"
                 fullWidth
                 autoComplete="off"
+                slotProps={{ htmlInput: { inputMode: 'search' } }}
                 value={value}
                 onChange={(e) => setValue(e.target.value)}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' && value.trim() !== '') {
+                        handleAddTodo()
+                    }
+                }}
             />
             <Button
                 variant="contained"

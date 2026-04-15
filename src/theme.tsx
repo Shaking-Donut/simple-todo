@@ -8,5 +8,9 @@ const theme = createTheme({
 })
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-    return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
+    return (
+        <MuiThemeProvider theme={theme} defaultMode="system">
+            {children}
+        </MuiThemeProvider>
+    )
 }

@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 type AppVersion = 'traditional' | 'aiSupported'
 
@@ -7,7 +8,15 @@ type AppSettingsState = {
     setAppVersion: (appVersion: AppVersion) => void
 }
 
-export const useAppSettings = create<AppSettingsState>()((set) => ({
-    appVersion: 'traditional',
-    setAppVersion: (appVersion) => set({ appVersion }),
-}))
+export const useAppSettings = create<AppSettingsState>()(
+    persist(
+        (set) => ({
+            appVersion: 'traditional',
+            setAppVersion: (appVersion) => set({ appVersion }),
+        }),
+
+        {
+            name: 'app-settings',
+        },
+    ),
+)
