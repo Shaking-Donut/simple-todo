@@ -29,4 +29,6 @@ Prompts used for Copilot Chat:
 
 `refactor the components into separate files, but keep them in components/ai/` - after everything was written, I asked copilot to refactor the code into separate components, which it did.
 
+`create a working implementation of random UUID generation` - this prompt created the `generateRandomUUID` function in `src/utils/uuid.ts`, which is used to generate unique IDs for the TODO items, but it is used only when crypto.randomUUID is not available. Mostly a case in Safari when used with HTTP instead of HTTPS.
+
 AI Code suggestions also helped write some of this README
