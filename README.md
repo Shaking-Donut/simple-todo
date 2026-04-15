@@ -1,73 +1,23 @@
-# React + TypeScript + Vite
+# Simple TODO app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How to run the app
 
-Currently, two official plugins are available:
+1. Download the code from GitHub and navigate to the project directory in your terminal.
+2. Run `pnpm install` to install the dependencies.
+3. Run `pnpm dev` to start the development server.
+4. Open your browser and navigate to `http://localhost:5173` to see the app in action.
+5. You can add, complete, and delete TODO items. The app will remember your TODOs even if you refresh the page, thanks to local storage.
+6. You can also toggle between light and dark themes using the theme toggle in the navbar, and switch between the traditional and AI assisted modes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## AI Used
 
-## React Compiler
+The only AI used in this project are the Copilot code suggestions, and Github Copilot Chat with Claude Haiku 4.5. Copilot wrote the whole aiSupported view along with components located in `src/components/ai`. The code outside of these files were written mostly by me, using only code suggestions, documentation and my own knowledge.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Prompts used for Copilot Chat:
+`you're a frontend developer tasked with creating a rather simple todo app, it should have a function to add a todo to the list, remove todo from list, and mark it as complete. there should be a FAB button that opens an input to provide the name of the todo. for state management you should use the provided useTodos zustand store and for UI components you can use the MUI 9.0 library along with mui icons. also add the navbar that was created in components, and make sure the app looks good both on mobile and desktop. don't use the todo and todoinput and todolist components - write those yourself` - this prompt created most of the ai view, along with components.
 
-## Expanding the ESLint configuration
+`show todos in two sections for completed and incomplete todos` - this prompt created the completed and incomplete sections in the ai view. which I forgot to add to the previous prompt.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+`refactor the components into separate files, but keep them in components/ai/` - after everything was written, I asked copilot to refactor the code into separate components, which it did.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+AI Code suggestions also helped write some of this README
