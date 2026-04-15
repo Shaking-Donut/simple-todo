@@ -14,6 +14,7 @@
 The only AI used in this project are the Copilot code suggestions, and Github Copilot Chat with Claude Haiku 4.5. Copilot wrote the whole aiSupported view along with components located in `src/components/ai`. The code outside of these files were written mostly by me, using only code suggestions, documentation and my own knowledge.
 
 Prompts used for Copilot Chat:
+
 `you're a frontend developer tasked with creating a rather simple todo app, it should have a function to add a todo to the list, remove todo from list, and mark it as complete. there should be a FAB button that opens an input to provide the name of the todo. for state management you should use the provided useTodos zustand store and for UI components you can use the MUI 9.0 library along with mui icons. also add the navbar that was created in components, and make sure the app looks good both on mobile and desktop. don't use the todo and todoinput and todolist components - write those yourself` - this prompt created most of the ai view, along with components.
 
 `show todos in two sections for completed and incomplete todos` - this prompt created the completed and incomplete sections in the ai view. which I forgot to add to the previous prompt.
