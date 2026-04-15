@@ -6,12 +6,20 @@
 2. Run `pnpm install` to install the dependencies.
 3. Run `pnpm dev` to start the development server.
 4. Open your browser and navigate to `http://localhost:5173` to see the app in action.
-5. You can add, complete, and delete TODO items. The app will remember your TODOs even if you refresh the page, thanks to local storage.
-6. You can also toggle between light and dark themes using the theme toggle in the navbar, and switch between the traditional and AI assisted modes.
+
+## App features
+
+1. You can add, complete, and delete TODO items. The app will remember your TODOs even if you refresh the page, thanks to local storage.
+1. You can also toggle between light and dark themes using the theme toggle in the navbar, and switch between the traditional and AI assisted modes.
+1. In the traditional mode you can swipe TODO items to the right to mark them as complete, and to the left to delete them. In the AI assisted mode you can only click on the checkbox to mark TODOs as complete, and use the delete button to delete them.
+1. The app was created with a mobile-first approach, so it should look good on both mobile and desktop devices. The navbar will adapt to the screen size, showing a hamburger menu on mobile and a horizontal menu on desktop.
+1. Material UI 9.0 was used for the UI components, along with MUI icons.
 
 ## AI Used
 
 The only AI used in this project are the Copilot code suggestions, and Github Copilot Chat with Claude Haiku 4.5. Copilot wrote the whole aiSupported view along with components located in `src/components/ai`. The code outside of these files were written mostly by me, using only code suggestions, documentation and my own knowledge.
+
+I haven't used AI for design, as when starting the project I had a clear vision of how I wanted the app to look, and I didn't feel the need to use AI for that. Also the AI was not used for ideation, as the features to be implemented were decided during the technical interview, and I didn't feel the need to use AI for that either. But if I had to use AI for ideation I would probably ask it to become a product manager and help me decide on the features to implement, and how to implement them. And then to create a comprehensive specification for the app to be used in development, which could also be provided as context for another AI agent to write the code.
 
 Prompts used for Copilot Chat:
 
